@@ -1,7 +1,8 @@
 <?php
-    header("content-type: text/xml");
-    echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+header('Content-Type: text/html');
 ?>
 <Response>
-    <Message>Hello, Mobile Monkey</Message>
+  <Message to="<?=$_REQUEST['PhoneNumber']?>">
+<?=htmlspecialchars(substr($_REQUEST['From'] . ": " . $_REQUEST['Body'], 0, 1600))?>
+  </Message>
 </Response>
